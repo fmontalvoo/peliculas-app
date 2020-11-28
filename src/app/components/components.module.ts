@@ -2,23 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+import { RatingModule } from 'ng-starrating';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
+import { MoviesGridComponent } from './movies-grid/movies-grid.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    MoviesGridComponent
   ],
   exports: [
     NavbarComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    MoviesGridComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    RatingModule
   ]
 })
 export class ComponentsModule { }

@@ -13,12 +13,22 @@ export class SlideshowComponent implements OnInit, AfterViewInit {
 
   @Input() movies: Array<Movie>;
 
+  private mySwiper: Swiper;
+
   constructor() { }
 
   ngAfterViewInit(): void {
-    const mySwiper = new Swiper('.swiper-container', {
+    this.mySwiper = new Swiper('.swiper-container', {
       loop: true,
     });
+  }
+
+  onSlidePrev(): void {
+    this.mySwiper.slidePrev();
+  }
+
+  onSlideNext(): void {
+    this.mySwiper.slideNext()
   }
 
   ngOnInit(): void {
