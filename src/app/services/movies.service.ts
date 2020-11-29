@@ -1,5 +1,5 @@
 import { Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 
@@ -10,6 +10,7 @@ import { Movie } from '../interfaces/movie.interface';
 
 import { environment } from 'src/environments/environment.dev';
 import { MovieDetails } from '../interfaces/movie.details.interface';
+import { Cast, MovieCast } from '../interfaces/movie.cast.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -66,7 +67,21 @@ export class MoviesService {
     const params = { ...this.getParams };
     delete params['page'];
 
-    return this.http.get<MovieDetails>(`${MoviesService.URL}/movie/${id}`, { params });
+    return this.http.get<MovieDetails>(`${MoviesService.URL}/movie/${id}`, { params })
+      .pipe(
+        catchError(err => of(null))
+      );
+  }
+
+  getMovieCasting(id: number): Observable<Array<Cast>> {
+    const params = { ...this.getParams };
+    delete params['page'];
+
+    return this.http.get<MovieCast>(`${MoviesService.URL}/movie/${id}/credits`, { params })
+      .pipe(
+        map(resp => resp.cast),
+        catchError(err => of([]))
+      );
   }
 
   setPage(page: number): void {
