@@ -5,10 +5,11 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { NowPlayingInterface } from '../interfaces/now_playing_interface';
-import { Movie } from '../interfaces/movie_interface';
+import { NowPlayingInterface } from '../interfaces/now.playing.interface';
+import { Movie } from '../interfaces/movie.interface';
 
 import { environment } from 'src/environments/environment.dev';
+import { MovieDetails } from '../interfaces/movie.details.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,13 @@ export class MoviesService {
           this.loading = false;
         })
       );
+  }
+
+  getMovieDetails(id: number) {
+    const params = { ...this.getParams };
+    delete params['page'];
+
+    return this.http.get<MovieDetails>(`${MoviesService.URL}/movie/${id}`, { params });
   }
 
   setPage(page: number): void {

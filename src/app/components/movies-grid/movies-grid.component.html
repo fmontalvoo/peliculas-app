@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-3 mb-3" *ngFor="let movie of movies">
+    <div class="col-md-3 mb-3" *ngFor="let movie of movies" [routerLink]="['/movie', movie.id]">
         <img [src]="movie.poster_path | image" alt="" class="img-fluid poster">
         <div>
             <h3>{{movie.title}}</h3>
@@ -13,6 +13,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

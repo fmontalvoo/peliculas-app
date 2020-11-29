@@ -1,4 +1,4 @@
-import { Movie } from './movie_interface';
+import { Movie } from './movie.interface';
 
 export interface NowPlayingInterface {
     total_pages: number;

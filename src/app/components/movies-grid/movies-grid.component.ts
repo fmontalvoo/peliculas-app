@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Movie } from 'src/app/interfaces/movie_interface';
+import { Movie } from 'src/app/interfaces/movie.interface';
 
 @Component({
   selector: 'app-movies-grid',

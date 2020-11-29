@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 
-import { Movie } from 'src/app/interfaces/movie_interface';
+import { Movie } from 'src/app/interfaces/movie.interface';
 
 import { MoviesService } from 'src/app/services/movies.service';
 

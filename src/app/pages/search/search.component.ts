@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Movie } from 'src/app/interfaces/movie_interface';
+import { Movie } from 'src/app/interfaces/movie.interface';
 
 import { MoviesService } from 'src/app/services/movies.service';
 

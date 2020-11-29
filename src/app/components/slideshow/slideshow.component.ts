@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 
 import { Swiper } from 'swiper';
 
-import { Movie } from 'src/app/interfaces/movie_interface';
+import { Movie } from 'src/app/interfaces/movie.interface';
 
 @Component({
   selector: 'app-slideshow',
