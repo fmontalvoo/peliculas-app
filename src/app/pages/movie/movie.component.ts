@@ -1,5 +1,8 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { MovieDetails } from 'src/app/interfaces/movie.details.interface';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -9,8 +12,9 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class MovieComponent implements OnInit {
 
+  public pelicula: MovieDetails;
 
-  constructor(private activatedRoute: ActivatedRoute, private moviesService: MoviesService) { }
+  constructor(private activatedRoute: ActivatedRoute, private moviesService: MoviesService, private location: Location) { }
 
   ngOnInit(): void {
     // this.id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
@@ -18,8 +22,12 @@ export class MovieComponent implements OnInit {
 
     this.moviesService.getMovieDetails(Number(id))
       .subscribe(
-        movie => console.log(movie)
+        movie => this.pelicula = movie
       );
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 }

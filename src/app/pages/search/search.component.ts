@@ -38,6 +38,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.moviesService.setPage(1);
     this.activatedRoute.params.subscribe(params => {
       this.query = params.query;
       this.moviesService.searchMovies(this.query).subscribe(movies => this.peliculas = movies);
