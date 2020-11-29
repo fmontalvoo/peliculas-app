@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { RatingModule } from 'ng-starrating';
 
+import { PipesModule } from '../pipes/pipes.module';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { MoviesGridComponent } from './movies-grid/movies-grid.component';
@@ -24,7 +26,8 @@ import { MoviesGridComponent } from './movies-grid/movies-grid.component';
   imports: [
     CommonModule,
     RouterModule,
-    RatingModule
+    RatingModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }

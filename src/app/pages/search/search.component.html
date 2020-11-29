@@ -1,1 +1,8 @@
-<p>search works!</p>
+<h3>Resultados para: <small class="text-capitalize">{{query}}</small></h3>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-movies-grid *ngIf="peliculas.length > 0" [movies]="peliculas"></app-movies-grid>
+    </div>
+</div>
