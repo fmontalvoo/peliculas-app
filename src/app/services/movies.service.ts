@@ -27,9 +27,9 @@ export class MoviesService {
 
   get getParams() {
     return {
-      api_key: environment.api_key,
       language: 'es-ES',
-      page: this.page.toString()
+      page: this.page.toString(),
+      api_key: environment.api_key
     };
   }
 
