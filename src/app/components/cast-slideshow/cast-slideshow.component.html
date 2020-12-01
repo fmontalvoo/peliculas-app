@@ -1,6 +1,7 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide text-white text-center" *ngFor="let actor of casting">
+        <div class="swiper-slide text-white text-center animate__animated animate__fadeIn animate__faster"
+            *ngFor="let actor of casting">
             <img class="img-thumbnail" [src]="actor.profile_path | image" [alt]="actor.name">
             {{actor.name}}
         </div>
