@@ -9,6 +9,7 @@ import { PipesModule } from '../pipes/pipes.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { MoviesGridComponent } from './movies-grid/movies-grid.component';
+import { CastSlideshowComponent } from './cast-slideshow/cast-slideshow.component';
 
 
 
@@ -16,12 +17,14 @@ import { MoviesGridComponent } from './movies-grid/movies-grid.component';
   declarations: [
     NavbarComponent,
     SlideshowComponent,
-    MoviesGridComponent
+    MoviesGridComponent,
+    CastSlideshowComponent
   ],
   exports: [
     NavbarComponent,
     SlideshowComponent,
-    MoviesGridComponent
+    MoviesGridComponent,
+    CastSlideshowComponent
   ],
   imports: [
     CommonModule,
